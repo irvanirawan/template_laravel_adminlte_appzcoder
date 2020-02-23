@@ -1,0 +1,42 @@
+{
+    "fields": [
+        {
+            "name": "kode_diagnosa",
+            "type": "string"
+        },
+        {
+            "name": "nama_diagnosa",
+            "type": "string"
+        },
+        {
+            "name": "created_by",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "updated_by",
+            "type": "integer#unsigned"
+        }
+    ],
+    "relationships": [
+        {
+            "name": "created_by",
+            "type": "belongsTo",
+            "class": "App\\User"
+        },
+        {
+            "name": "updated_by",
+            "type": "belongsTo",
+            "class": "App\\User"
+        }
+    ],
+    "validations": [
+        {
+            "field": "kode_diagnosa",
+            "rules": "required|min:3"
+        },
+        {
+            "field": "nama_diagnosa",
+            "rules": "required|min:3"
+        }
+    ]
+}

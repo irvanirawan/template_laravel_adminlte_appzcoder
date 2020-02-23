@@ -1,0 +1,51 @@
+{
+    "fields": [
+        {
+            "name": "pelayanan_pasien",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "diagnosa",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "keterangan",
+            "type": "text"
+        },
+        {
+            "name": "created_by",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "updated_by",
+            "type": "integer#unsigned"
+        }
+    ],
+    "relationships": [
+        {
+            "name": "created_by",
+            "type": "belongsTo",
+            "class": "App\\User"
+        },
+        {
+            "name": "updated_by",
+            "type": "belongsTo",
+            "class": "App\\User"
+        },
+        {
+            "name": "pelayanan_pasien",
+            "type": "belongsTo",
+            "class": "App\\PelayananPasienHeader"
+        }
+    ],
+    "validations": [
+        {
+            "field": "pelayanan_pasien",
+            "rules": "required|min:1"
+        },
+        {
+            "field": "diagnosa",
+            "rules": "required|min:1"
+        }
+    ]
+}

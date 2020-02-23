@@ -1,0 +1,71 @@
+{
+    "fields": [
+        {
+            "name": "header_id",
+            "type": "integer"
+        },
+        {
+            "name": "tindakan_pelayanan",
+            "type": "select",
+            "options": {
+                "keynya": "Valuenya"
+            }
+        },
+        {
+            "name": "persentasi",
+            "type": "string"
+        },
+        {
+            "name": "nilai_persentasi",
+            "type": "string"
+        },
+        {
+            "name": "keterangan",
+            "type": "text"
+        },
+        {
+            "name": "created_by",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "updated_by",
+            "type": "integer#unsigned"
+        }
+    ],
+    "relationships": [
+        {
+            "name": "created_by",
+            "type": "belongsTo",
+            "class": "App\\User"
+        },
+        {
+            "name": "updated_by",
+            "type": "belongsTo",
+            "class": "App\\User"
+        },
+        {
+            "name": "header_id",
+            "type": "belongsTo",
+            "class": "App\\Models\\PersentasiDokterHeader"
+        },
+        {
+            "name": "tindakan_pelayanan",
+            "type": "belongsTo",
+            "class": "App\\Models\\TindakanPelayanan"
+        }
+    ],
+    "validations": [
+        {
+            "field": "header_id",
+            "rules": "required|integer"
+        },
+        {
+            "field": "tindakan_pelayanan",
+            "rules": "required|integer"
+        },
+        {
+            "field": "persentasi",
+            "rules": "required|between:0,99.99"
+        }
+    ]
+}

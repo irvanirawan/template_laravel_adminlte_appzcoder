@@ -1,0 +1,46 @@
+{
+    "fields": [
+        {
+            "name": "tenaga_medis",
+            "type": "select",
+            "options": {
+                "keynya": "Valuenya"
+            }
+        },
+        {
+            "name": "keterangan",
+            "type": "text"
+        },
+        {
+            "name": "created_by",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "updated_by",
+            "type": "integer#unsigned"
+        }
+    ],
+    "relationships": [
+        {
+            "name": "created_by",
+            "type": "belongsTo",
+            "class": "App\\User"
+        },
+        {
+            "name": "updated_by",
+            "type": "belongsTo",
+            "class": "App\\User"
+        },
+        {
+            "name": "tenaga_medis",
+            "type": "belongsTo",
+            "class": "App\\User\\TenagaMedis"
+        }
+    ],
+    "validations": [
+        {
+            "field": "tenaga_medis",
+            "rules": "required|integer"
+        }
+    ]
+}

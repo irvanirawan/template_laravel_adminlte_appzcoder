@@ -1,0 +1,133 @@
+{
+    "fields": [
+        {
+            "name": "kode_pegawai",
+            "type": "string"
+        },
+        {
+            "name": "nama_pegawai",
+            "type": "string"
+        },
+        {
+            "name": "jabatan",
+            "type": "select",
+            "options": {
+                "keynya": "Valuenya"
+            }
+        },
+        {
+            "name": "jenis_kelamin",
+            "type": "select",
+            "options": {
+                "keynya": "Valuenya"
+            }
+        },
+        {
+            "name": "alamat",
+            "type": "text"
+        },
+        {
+            "name": "agama",
+            "type": "select",
+            "options": {
+                "keynya": "Valuenya"
+            }
+        },
+        {
+            "name": "telp",
+            "type": "string"
+        },
+        {
+            "name": "email",
+            "type": "string"
+        },
+        {
+            "name": "keterangan",
+            "type": "text"
+        },
+        {
+            "name": "tanggal_lahir",
+            "type": "date"
+        },
+        {
+            "name": "mulai_bekerja",
+            "type": "date"
+        },
+        {
+            "name": "akhir_bekerja",
+            "type": "date"
+        },
+        {
+            "name": "golongan",
+            "type": "select",
+            "options": {
+                "keynya": "Valuenya"
+            }
+        },
+        {
+            "name": "pendidikan_akhir",
+            "type": "select",
+            "options": {
+                "keynya": "Valuenya"
+            }
+        },
+        {
+            "name": "bidang_peminatan",
+            "type": "string"
+        },
+        {
+            "name": "dokter_atau_bidan",
+            "type": "select",
+            "options": {
+                "keynya": "Valuenya"
+            }
+        },
+        {
+            "name": "created_by",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "updated_by",
+            "type": "integer#unsigned"
+        }
+    ],
+    "relationships": [
+        {
+            "name": "created_by",
+            "type": "belongsTo",
+            "class": "App\\User"
+        },
+        {
+            "name": "updated_by",
+            "type": "belongsTo",
+            "class": "App\\User"
+        },
+        {
+            "name": "jabatan",
+            "type": "belongsTo",
+            "class": "App\\Jabatan"
+        }
+    ],
+    "validations": [
+        {
+            "field": "kode_pegawai",
+            "rules": "required|min:3"
+        },
+        {
+            "field": "nama_pegawai",
+            "rules": "required|min:3"
+        },
+        {
+            "field": "jabatan",
+            "rules": "required"
+        },
+        {
+            "field": "golongan",
+            "rules": "required"
+        },
+        {
+            "field": "dokter_atau_bidan",
+            "rules": "required"
+        }
+    ]
+}

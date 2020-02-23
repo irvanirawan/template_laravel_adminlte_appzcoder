@@ -1,0 +1,45 @@
+php artisan crud:generate
+ Posts
+  --fields_from_file="appzcoder/tes.json"
+  --view-path=admin
+  --controller-namespace=Admin
+  --route-group=admin
+  --form-helper=html
+
+For controller: =============================================================================
+php artisan crud:controller
+  PostsController
+    --crud-name=posts
+    --model-name=Post
+    --view-path="directory"
+    --route-group=admin
+
+For model: ==================================================================================
+php artisan crud:model
+  Post
+    --fillable="['title', 'body']"
+
+For migration: ==============================================================================
+php artisan crud:migration
+  posts
+    --schema="title#string; body#text"
+
+For view: ===================================================================================
+php artisan crud:view
+  posts
+    --fields="title#string; body#text"
+    --view-path="directory"
+    --route-group=admin
+    --form-helper=html
+
+For api crud: ==============================================================================
+php artisan crud:api
+  Posts
+    --fields='title#string; content#text'
+    --controller-namespace=Api
+
+For api controller: ========================================================================
+php artisan crud:api-controller
+  Api\\PostsController
+    --crud-name=posts
+    --model-name=Post

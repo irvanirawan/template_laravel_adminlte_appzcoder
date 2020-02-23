@@ -1,0 +1,42 @@
+{
+    "fields": [
+        {
+            "name": "kode_jenis_perawatan",
+            "type": "string"
+        },
+        {
+            "name": "nama_jenis_perawatan",
+            "type": "string"
+        },
+        {
+            "name": "created_by",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "updated_by",
+            "type": "integer#unsigned"
+        }
+    ],
+    "relationships": [
+        {
+            "name": "created_by",
+            "type": "belongsTo",
+            "class": "App\\User"
+        },
+        {
+            "name": "updated_by",
+            "type": "belongsTo",
+            "class": "App\\User"
+        }
+    ],
+    "validations": [
+        {
+            "field": "kode_jenis_perawatan",
+            "rules": "required|min:3"
+        },
+        {
+            "field": "nama_jenis_perawatan",
+            "rules": "required|min:3"
+        }
+    ]
+}

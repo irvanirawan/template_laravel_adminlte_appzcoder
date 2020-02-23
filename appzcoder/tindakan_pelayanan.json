@@ -1,0 +1,96 @@
+{
+    "fields": [
+        {
+            "name": "kode_tarif_pelayanan",
+            "type": "string"
+        },
+        {
+            "name": "nama_tarif_pelayanan",
+            "type": "string"
+        },
+        {
+            "name": "nilai_tarif_pelayanan",
+            "type": "integer"
+        },
+        {
+            "name": "kunci_tarif",
+            "type": "select",
+            "options": {
+                "keynya": "Valuenya"
+            }
+        },
+        {
+            "name": "keterangan",
+            "type": "text"
+        },
+        {
+            "name": "kategori_tindakan",
+            "type": "select",
+            "options": {
+                "keynya": "Valuenya"
+            }
+        },
+        {
+            "name": "poli",
+            "type": "select",
+            "options": {
+                "keynya": "Valuenya"
+            }
+        },
+        {
+            "name": "status",
+            "type": "select",
+            "options": {
+                "keynya": "Valuenya"
+            }
+        },
+        {
+            "name": "created_by",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "updated_by",
+            "type": "integer#unsigned"
+        }
+    ],
+    "relationships": [
+        {
+            "name": "created_by",
+            "type": "belongsTo",
+            "class": "App\\User"
+        },
+        {
+            "name": "updated_by",
+            "type": "belongsTo",
+            "class": "App\\User"
+        },
+        {
+            "name": "kategori_tindakan",
+            "type": "belongsTo",
+            "class": "App\\Models\\KategoriTindakan"
+        },
+        {
+            "name": "poli",
+            "type": "belongsTo",
+            "class": "App\\Models\\Poli"
+        }
+    ],
+    "validations": [
+        {
+            "field": "kode_tarif_pelayanan",
+            "rules": "required|min:3"
+        },
+        {
+            "field": "nama_tarif_pelayanan",
+            "rules": "required|min:3"
+        },
+        {
+            "field": "nilai_tarif_pelayanan",
+            "rules": "required|min:1"
+        },
+        {
+            "field": "nilai_tarif_pelayanan",
+            "rules": "required|min:1"
+        }
+    ]
+}

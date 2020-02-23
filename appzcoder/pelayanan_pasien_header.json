@@ -1,0 +1,43 @@
+{
+    "fields": [
+        {
+            "name": "pasien",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "status",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "created_by",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "updated_by",
+            "type": "integer#unsigned"
+        }
+    ],
+    "relationships": [
+        {
+            "name": "created_by",
+            "type": "belongsTo",
+            "class": "App\\User"
+        },
+        {
+            "name": "updated_by",
+            "type": "belongsTo",
+            "class": "App\\User"
+        },
+        {
+            "name": "pasien",
+            "type": "belongsTo",
+            "class": "App\\PendaftaranPasien"
+        }
+    ],
+    "validations": [
+        {
+            "field": "pasien",
+            "rules": "required|min:1"
+        }
+    ]
+}

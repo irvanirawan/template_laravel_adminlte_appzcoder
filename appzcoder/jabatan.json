@@ -1,0 +1,42 @@
+{
+    "fields": [
+        {
+            "name": "kode_jabatan",
+            "type": "string"
+        },
+        {
+            "name": "nama_jabatan",
+            "type": "string"
+        },
+        {
+            "name": "created_by",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "updated_by",
+            "type": "integer#unsigned"
+        }
+    ],
+    "relationships": [
+        {
+            "name": "created_by",
+            "type": "belongsTo",
+            "class": "App\\User"
+        },
+        {
+            "name": "updated_by",
+            "type": "belongsTo",
+            "class": "App\\User"
+        }
+    ],
+    "validations": [
+        {
+            "field": "kode_jabatan",
+            "rules": "required|min:3"
+        },
+        {
+            "field": "nama_jabatan",
+            "rules": "required|min:3"
+        }
+    ]
+}

@@ -1,0 +1,62 @@
+{
+    "fields": [
+        {
+            "name": "pelayanan_pasien",
+            "type": "integer#unsigned"
+        },{
+            "name": "obat_alkes",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "qty",
+            "type": "string"
+        },
+        {
+            "name": "harga",
+            "type": "string"
+        },
+        {
+            "name": "total",
+            "type": "string"
+        },
+        {
+            "name": "keterangan",
+            "type": "text"
+        },
+        {
+            "name": "created_by",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "updated_by",
+            "type": "integer#unsigned"
+        }
+    ],
+    "relationships": [
+        {
+            "name": "created_by",
+            "type": "belongsTo",
+            "class": "App\\User"
+        },
+        {
+            "name": "updated_by",
+            "type": "belongsTo",
+            "class": "App\\User"
+        },
+        {
+            "name": "pelayanan_pasien",
+            "type": "belongsTo",
+            "class": "App\\PelayananPasienHeader"
+        }
+    ],
+    "validations": [
+        {
+            "field": "pelayanan_pasien",
+            "rules": "required|min:1"
+        },
+        {
+            "field": "obat_alkes",
+            "rules": "required|min:1"
+        }
+    ]
+}

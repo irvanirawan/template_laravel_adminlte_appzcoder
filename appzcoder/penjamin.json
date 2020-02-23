@@ -1,0 +1,54 @@
+{
+    "fields": [
+        {
+            "name": "kode_penjamin",
+            "type": "string"
+        },
+        {
+            "name": "nama_penjamin",
+            "type": "string"
+        },
+        {
+            "name": "alamat",
+            "type": "text"
+        },
+        {
+            "name": "telp",
+            "type": "string"
+        },
+        {
+            "name": "kontak_person",
+            "type": "string"
+        },
+        {
+            "name": "created_by",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "updated_by",
+            "type": "integer#unsigned"
+        }
+    ],
+    "relationships": [
+        {
+            "name": "created_by",
+            "type": "belongsTo",
+            "class": "App\\User"
+        },
+        {
+            "name": "updated_by",
+            "type": "belongsTo",
+            "class": "App\\User"
+        }
+    ],
+    "validations": [
+        {
+            "field": "kode_penjamin",
+            "rules": "required|min:3"
+        },
+        {
+            "field": "nama_penjamin",
+            "rules": "required|min:3"
+        }
+    ]
+}

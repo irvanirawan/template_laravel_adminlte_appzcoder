@@ -1,0 +1,174 @@
+{
+    "fields": [
+        {
+            "name": "no_urut",
+            "type": "string"
+        },
+        {
+            "name": "no_rekam_medis",
+            "type": "string"
+        },
+        {
+            "name": "tgl_pendaftaran",
+            "type": "string"
+        },
+        {
+            "name": "nama_pasien",
+            "type": "string"
+        },
+        {
+            "name": "tempat_lahir",
+            "type": "string"
+        },
+        {
+            "name": "tgl_lahir",
+            "type": "string"
+        },
+        {
+            "name": "alamat",
+            "type": "string"
+        },
+        {
+            "name": "telp",
+            "type": "string"
+        },
+        {
+            "name": "ruangan",
+            "type": "select",
+            "options": {
+                "keynya": "Valuenya"
+            }
+        },
+        {
+            "name": "dokter",
+            "type": "select",
+            "options": {
+                "keynya": "Valuenya"
+            }
+        },
+        {
+            "name": "tipe_perawatan",
+            "type": "select",
+            "options": {
+                "keynya": "Valuenya"
+            }
+        },
+        {
+            "name": "jenis_perawatan",
+            "type": "select",
+            "options": {
+                "keynya": "Valuenya"
+            }
+        },
+        {
+            "name": "jenis_kelamin",
+            "type": "select",
+            "options": {
+                "keynya": "Valuenya"
+            }
+        },
+        {
+            "name": "asal_rujukan",
+            "type": "select",
+            "options": {
+                "keynya": "Valuenya"
+            }
+        },
+        {
+            "name": "jaminan",
+            "type": "select",
+            "options": {
+                "keynya": "Valuenya"
+            }
+        },
+        {
+            "name": "no_peserta",
+            "type": "string"
+        },
+        {
+            "name": "no_sep",
+            "type": "string"
+        },
+        {
+            "name": "nama_lengkap",
+            "type": "string"
+        },
+        {
+            "name": "hubungan_penanggungjawab",
+            "type": "string"
+        },
+        {
+            "name": "no_identitas_penanggungjawab",
+            "type": "string"
+        },
+        {
+            "name": "alamat_penanggungjawab",
+            "type": "text"
+        },
+        {
+            "name": "keterangan",
+            "type": "text"
+        },
+        {
+            "name": "status",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "created_by",
+            "type": "integer#unsigned"
+        },
+        {
+            "name": "updated_by",
+            "type": "integer#unsigned"
+        }
+    ],
+    "relationships": [
+        {
+            "name": "created_by",
+            "type": "belongsTo",
+            "class": "App\\User"
+        },
+        {
+            "name": "updated_by",
+            "type": "belongsTo",
+            "class": "App\\User"
+        },
+        {
+            "name": "ruangan",
+            "type": "belongsTo",
+            "class": "App\\RuanganPoli"
+        },
+        {
+            "name": "jenis_perawatan",
+            "type": "belongsTo",
+            "class": "App\\JenisPerawatan"
+        },
+        {
+            "name": "jaminan",
+            "type": "belongsTo",
+            "class": "App\\Jaminan"
+        }
+    ],
+    "validations": [
+        {
+            "field": "no_urut",
+            "rules": "required|min:3"
+        },
+        {
+            "field": "no_rekam_medis",
+            "rules": "required|min:3"
+        },
+        {
+            "field": "nama_pasien",
+            "rules": "required|min:3"
+        },
+        {
+            "field": "ruangan",
+            "rules": "required|min:1"
+        },
+        {
+            "field": "jenis_perawatan",
+            "rules": "required|min:1"
+        }
+    ]
+}
